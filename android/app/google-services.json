@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "954772503039",
+    "firebase_url": "https://crypto-wallet-a8f3d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "crypto-wallet-a8f3d",
+    "storage_bucket": "crypto-wallet-a8f3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954772503039:android:535e1ce8c324ea5542cfca",
+        "android_client_info": {
+          "package_name": "com.example.crypto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954772503039-kue825jat16fb0l7ojs4pprru8g05ltp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHV0ZL0WCkG8XfOgRS6SCe1gD1tpEt8h0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954772503039-kue825jat16fb0l7ojs4pprru8g05ltp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "954772503039-bf2l7qr7o01jvl39iav5c4c3t4vnlmuk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.crypto"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
