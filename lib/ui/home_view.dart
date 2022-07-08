@@ -19,6 +19,8 @@ class _HomeViewState extends State<HomeView> {
   double bitcoin = 0.0;
   double ethereum = 0.0;
   double tether = 0.0;
+  double cardano = 0.0;
+  double solana = 0.0;
 
   @override
   initState() {
@@ -29,6 +31,8 @@ class _HomeViewState extends State<HomeView> {
     bitcoin = await getPrice("bitcoin");
     ethereum = await getPrice("ethereum");
     tether = await getPrice("tether");
+    cardano = await getPrice("cardano");
+    solana = await getPrice("solana");
     setState(() {});
   }
 
@@ -39,15 +43,28 @@ class _HomeViewState extends State<HomeView> {
         return (bitcoin * amount).toStringAsFixed(2);
       } else if (id == "ethereum") {
         return (ethereum * amount).toStringAsFixed(2);
-      } else {
+      } else if (id == "tether") {
         return (tether * amount).toStringAsFixed(2);
+      } else if (id == "cardano") {
+        return (cardano * amount).toStringAsFixed(2);
+      } else if (id == "solana") {
+        return (solana * amount).toStringAsFixed(2);
       }
     }
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 10, 51, 70),
+        title: Padding(
+          padding: const EdgeInsets.only(right: 40.0),
+          child: Center(
+            child: Text("My Wallet"),
+          ),
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color.fromRGBO(20, 22, 41, 1),
         ),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -70,12 +87,12 @@ class _HomeViewState extends State<HomeView> {
                   children: snapshot.data?.docs.map((document) {
                     return Padding(
                       padding:
-                          EdgeInsets.only(top: 5.0, left: 15.0, right: 15.0),
+                          EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
                       child: Container(
                           height: MediaQuery.of(context).size.height / 12,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.0),
-                            color: Colors.blue,
+                            color: Color.fromRGBO(108, 106, 235, 1),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -120,7 +137,7 @@ class _HomeViewState extends State<HomeView> {
             ),
           );
         },
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromRGBO(108, 106, 235, 1),
         child: Icon(
           Icons.add,
           color: Colors.white,

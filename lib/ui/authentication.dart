@@ -19,9 +19,7 @@ class _AuthenticationState extends State<Authentication> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          color: Colors.blueAccent,
-        ),
+        decoration: BoxDecoration(color: Color.fromRGBO(108, 106, 235, 1)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -66,31 +64,7 @@ class _AuthenticationState extends State<Authentication> {
               width: MediaQuery.of(context).size.width / 1.4,
               height: 45,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: Colors.white,
-              ),
-              child: MaterialButton(
-                onPressed: () async {
-                  bool shouldNavigate =
-                      await register(_emailField.text, _passwordField.text);
-                  if (shouldNavigate) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeView(),
-                      ),
-                    );
-                  }
-                },
-                child: Text("Register"),
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 35),
-            Container(
-              width: MediaQuery.of(context).size.width / 1.4,
-              height: 45,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
+                borderRadius: BorderRadius.circular(11.0),
                 color: Colors.white,
               ),
               child: MaterialButton(
@@ -107,6 +81,36 @@ class _AuthenticationState extends State<Authentication> {
                     }
                   },
                   child: Text("Login")),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height / 35),
+            Container(
+              width: MediaQuery.of(context).size.width / 1.4,
+              height: 45,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(11.0),
+                border: Border.all(
+                  color: Colors.white,
+                  width: 1,
+                ),
+              ),
+              child: MaterialButton(
+                onPressed: () async {
+                  bool shouldNavigate =
+                      await register(_emailField.text, _passwordField.text);
+                  if (shouldNavigate) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeView(),
+                      ),
+                    );
+                  }
+                },
+                child: Text(
+                  "Register",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
           ],
         ),
